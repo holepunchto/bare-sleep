@@ -1,6 +1,6 @@
 {
   "name": "bare-sleep",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Blocking sleep for JavaScript",
   "exports": {
     ".": {
