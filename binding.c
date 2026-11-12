@@ -5,13 +5,13 @@
 #include <stdint.h>
 #include <uv.h>
 
-#ifndef _WIN32
+#if !defined(_WIN32) && !defined(__FREERTOS__)
 #include <time.h>
 #endif
 
 static void
 bare_sleep__sleep(uint64_t ns) {
-#ifdef _WIN32
+#if defined(_WIN32) || defined(__FREERTOS__)
   uv_sleep((unsigned int) ((ns + 999999) / 1000000));
 #else
   struct timespec remaining = {
